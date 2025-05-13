@@ -1,62 +1,65 @@
-class Pessoa():
-    def __init__(self, nome, idade, peso):
-        self.nome=nome
-        self.idade=idade
-        self.peso=peso
-        self.comendo=False
-        self.falando=False
-        self.dormindo=False
-
-    def dormir(self):
-        if self.dormindo==True:
-            print("Já está dormindo")
-        elif self.comendo==True:
-            print("Não pode dormir, pois está comendo")
-        elif self.falando==True:
-            print("Não pode dormir, pois está falando")
-        else:
-            print("Foi dormir")
-            self.dormindo=True
-    def acordar(self):
-        if self.dormindo==True:
-            print("Acordou")
-            self.dormindo=False
-        else:
-            print("Já está acordado")
-
-    def falar(self):
-        if self.falando==True:
-            print("Já está falando")
-        elif self.comendo==True:
-            print("Não pode falar, pois está comendo")
-        elif self.dormindo==True:
-            print("Não pode falar, pois está dormindo")
-        else:
-            print("Começou a falar")
-            self.falando=True
-    def paroudefalar(self):
-        if self.falando==True:
-            print("Parou de falar")
-            self.falando=False
-        else:
-            print("Já parou de falar")
+class Animal():
+    def __init__(self, nome, cor):
+        self.nome = nome
+        self.cor = cor
 
     def comer(self):
-        if self.comendo==True:
-            print(f"Já está comendo")
-        elif self.dormindo==True:
-            print(f"Não pode comer, pois está dormindo")
-        elif self.falando==True:
-            print(f"Não pode comer, pois está falando")
-        else:
-            print("Começou a comer")
-            self.comendo=True
-    def paroudecomer(self):
-        if self.comendo()==True:
-            print("parou de comer")
-            self.comendo=False
-        else:
-            print("Já parou de comer")
+        print(f"O {self.nome} foi comer...")
+
+class Gato(Animal):
+    def __init__(self, nome, cor):
+        super().__init__(nome, cor)
+    def miar(self):
+        print(f"O {self.nome} foi miando...")
+
+class Cachorro(Animal):
+    def __init__(self, nome, cor):
+        super().__init__(nome, cor)
+    def latir(self):
+        print(f"O {self.nome} foi latindo")
+
+class Vaca(Animal):
+    def __init__(self, nome, cor):
+        super().__init__(nome, cor)
+    def mugir(self):
+        print(f"A {self.nome} foi mugir")
+
+class Coelho(Animal):
+    def __init__(self, nome, cor):
+        super().__init__(nome, cor)
+    def guinchar(self):
+        print(f"O {self.nome} foi guinchar")
+
+class Ingresso():
+    def __init__(self, valor):
+        self.valor = valor
+    def imprimevalor(self):
+        print(f"{self.valor}")
+
+class Vip(Ingresso):
+    def __init__(self, valor):
+        super().__init__(valor)
+    def imprimavip(self):
+        self.valor+=(self.valor*50/100)
+        print(f"{self.valor}")
+
+class Forma():
+    def __init__(self, area, perimetro):
+        self.area = area
+        self.perimetro = perimetro
+
+class Retangulo(Forma):
+    def __init__(self, base, altura):
+        super().__init__(base, altura)
+        self.base=base
+        self.altura=altura
+    def calculaarea(self):
+        self.calculaarea = (self.base * self.altura)
+        print(f"A área do retângulo é {self.calculaarea}")
+    def calculaperimetro(self):
+        self.calculaperimetro = 2 * (self.base*self.altura)
+        print(f"O perímetro do retângulo é {self.calculaperimetro}")
+
 
 
 

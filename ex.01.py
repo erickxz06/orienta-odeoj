@@ -1,7 +1,4 @@
-from biblioteca import Pessoa
+print(f"{2}")
 
-aluno01= Pessoa("Erick",  18,  51)
 
-aluno01.dormir()
-aluno01.falar()
-aluno01.comer()
+
